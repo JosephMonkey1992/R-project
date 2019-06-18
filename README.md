@@ -1,5 +1,5 @@
-# R-project
-Classification model, logistics, ROC, AUC, SVM, K-fold validation.
+# R-project/Python time series
+Classification model, logistics, ROC, AUC, SVM, K-fold validation, Python time series etc
 ## Top Interview
 - [2.Importing data](#2Importing-data)  
 - [3.Logistics Regression](#3Logistics-Regression)  
@@ -8,6 +8,7 @@ Classification model, logistics, ROC, AUC, SVM, K-fold validation.
 - [6.Performance Visualization with ROC](#6Performance-Visualization-with-ROC)
 - [7.Random Forest](#7Random-Forest)
 - [8.Support Vector Machine (SVM)](#8Support-Vector-Machine-(SVM))
+- [9.python time series](#9python-time-series)  
 ### 2.Importing data
 basic plotting and delete unnecessary attributes
 ```R
@@ -194,3 +195,37 @@ best_svm_mod <- svm_tune$best.model
 test$svm_pred_class <- predict(best_svm_mod, test) # save the predicted class by the svm model
 test$svm_dv<-as.numeric(attr(predict(best_svm_mod, test, decision.values = TRUE),"decision.values"))
 ```
+### 9.python time series
+python time series to predict demands
+```python
+import pandas as pd
+import numpy as np
+import matplotlib.pylab as plt
+import seaborn as sns
+%matplotlib inline
+sns.set()
+##import csv
+df = pd.read_csv('DEM.csv', skiprows=0)
+df.head()
+df.info()
+##change column name
+df.columns = ['day', 'demand']
+df.head()
+df.day = pd.to_datetime(df.day)
+df.set_index('day', inplace=True)
+df.head()
+##plot the demands
+df.plot(figsize=(20,10), linewidth=5, fontsize=20)
+plt.xlabel('day', fontsize=20);
+##rolling average
+demand = df[['demand']]
+demand.rolling(12).mean().plot(figsize=(20,10), linewidth=5, fontsize=20)
+plt.xlabel('day', fontsize=20);
+##decrete difference over time
+demand.diff().plot(figsize=(20,10), linewidth=5, fontsize=20)
+plt.xlabel('day', fontsize=20);
+##autocorrelation
+df.diff().corr()
+pd.plotting.autocorrelation_plot(demand);
+```
+
