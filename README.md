@@ -1,13 +1,13 @@
 # R-project
 Classification model, logistics, ROC, AUC, SVM, K-fold validation.
 ## Top Interview
-[2.Importing data](#2Importing data)  
-[3.Logistics Regression](#3Logistics Regression)  
-[4.Hold-out validation for Logistics](#4Hold-out validation for Logistics)  
-[5.Classification Tree Model](#5Classification Tree Model)  
-[6.Performance Visualization with ROC](#6Performance Visualization with ROC)
-[7.Random Forest](#7Random Forest)
-[8.Support Vector Machine (SVM)](#8Support Vector Machine (SVM))
+- [2.Importing data](#2Importing-data)  
+- [3.Logistics Regression](#3Logistics-Regression)  
+- [4.Hold_out validation for Logistics](#4Hold_out-validation-for-Logistics)  
+- [5.Classification Tree Model](#5Classification-Tree-Model)  
+- [6.Performance Visualization with ROC](#6Performance-Visualization-with-ROC)
+- [7.Random Forest](#7Random-Forest)
+- [8.Support Vector Machine (SVM)](#8Support-Vector-Machine-(SVM))
 ### 2.Importing data
 basic plotting and delete unnecessary attributes
 ```R
